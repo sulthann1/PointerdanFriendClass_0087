@@ -3,5 +3,35 @@ using namespace std;
 
 class PersegiPanjang
 {
-    public : // akses modifier
+    public : // akses modifier;
+    int panjang, lebar;
+
+    public :
+
+    void input ()
+    {
+        cout << "Masukan panjang :"
+        cin >> panjang;
+        cout << "Masukan lebar :";
+        cin >> lebar;
+    }
+
+    int LuasPp( int a, int b)
+    {
+        return a*b;
+    }
+
+    Lingkaran ol;
+};
+
+class Lingkaran
+
+{
+public :
+    int jarijari;
+
+    void input ()
+    {
+        
+    }
 }
