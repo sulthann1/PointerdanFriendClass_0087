@@ -19,4 +19,6 @@ int main (){
     mhs.showNim();
     mahasiswa * pMhs; //pointer reference refMhs
     pMhs -> nim = 3; //arrow operator 
+    pMhs -> showNim ();
+    return 0;
 }
