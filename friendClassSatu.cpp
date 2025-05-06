@@ -3,7 +3,8 @@
 using namespace std;
 
 class siswa;
-class orang;
+class orang
+
 {
     private :
     string nama;
@@ -20,6 +21,6 @@ class siswa
 
     public :
     void setId (int pId);
-    void display All (orang &a);
-    
+    void displayAll (orang &a);
+
 }
