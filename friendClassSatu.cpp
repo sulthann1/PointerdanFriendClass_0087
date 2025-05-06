@@ -38,4 +38,11 @@ void siswa :: setId (int pId)
     id = pId;
 }
 
-int main
+int main()
+{
+    orang joko;
+    joko.setNama("joko susilo");
+    siswa joko_siswa;
+    joko_siswa.displayAll(joko);
+    return 0;
+}
