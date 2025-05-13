@@ -1,24 +1,46 @@
 #include <iostream>
 using namespace std;
 
-class mahasiswa{
+class bangunDatar;
+class persegiPanjang{
     public :
-    int nim;
-    void showNim()
-    {
-        cout << "No Induk ="<<nim <<endl;
-    }
+    void inputData(bangunDatar &bd);
+    void outputData(bangunDatar &bd);
+   
+    
 };
 
-int main (){
-    mahasiswa mhs{1}; //objek mhs
-    mhs.showNim(); //member acces operator
+class bangunDatar{
+    private :
+    float panjang;
+    float lebar;
+    float hitungLuas(){
+        return panjang * lebar;
+    };
+    float hitungKeliling(){
+        return 2 * (panjang + lebar);
+    };
+    public :
+    friend void persegiPanjang::inputData(bangunDatar &bd);
+    friend void persegiPanjang::outputData(bangunDatar &bd);
+   
+};
 
-    mahasiswa &refMhs = mhs;// pointer reference refmhs
-    refMhs.nim = 2; //member acces oprator
-    mhs.showNim();
-    mahasiswa * pMhs; //pointer reference refMhs
-    pMhs -> nim = 3; //arrow operator 
-    pMhs -> showNim ();
-    return 0;
+void persegiPanjang::inputData(bangunDatar &bd){
+    cout << "panjang : ";
+    cin >> bd.panjang;
+    cout << "lebar : ";
+    cin >> bd.lebar;
+}
+void persegiPanjang::outputData(bangunDatar &bd){
+    cout << "Luas : " << bd.hitungLuas() << endl;
+    cout << "Keliling : " << bd.hitungKeliling() << endl;
+};
+
+int main(){
+    bangunDatar bd;
+    persegiPanjang pp;
+    pp.inputData(bd);
+    pp.outputData(bd);
+   
 }
